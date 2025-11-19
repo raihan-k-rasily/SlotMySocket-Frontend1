@@ -1,0 +1,118 @@
+/* Header fixed at top */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Adjust to your header height */
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.85); /* optional blur effect */
+}
+
+/* Push content below the header */
+.main-content { /* Same as header height */
+  padding-bottom: 4rem; /* Optional for spacing before footer */
+}
+.station-page {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+/* Push content below header */
+.station-main {
+  max-width: 1200px;
+  margin: 80px auto 0 auto; /* adjust based on header height */
+  padding: 0 20px 100px 20px;
+  text-align: center;
+}
+
+.station-title {
+  font-size: 3rem;
+  color: #9b5de5;
+  margin-bottom: 20px;
+}
+
+/* Search Bar */
+.station-search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.station-search input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 1px solid #7b2cbf;
+  background-color: #111;
+  color: #fff;
+  outline: none;
+}
+
+.station-search input::placeholder {
+  color: #aaa;
+}
+
+/* Stations Grid */
+.station-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .station-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .station-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Station Card */
+.station-card {
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.station-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.station-card p {
+  margin: 5px 0;
+}
+
+/* Status Colors */
+.station-card.available {
+  background-color: rgba(0, 128, 0, 0.6);
+}
+
+.station-card.charging {
+  background-color: rgba(255, 165, 0, 0.6);
+}
+
+.station-card.occupied {
+  background-color: rgba(255, 0, 0, 0.6);
+}
+
+/* Hover effect */
+.station-card:hover {
+  transform: translateY(-5px);
+}
+
+.no-stations {
+  grid-column: 1 / -1;
+  color: #aaa;
+  font-size: 1.2rem;
+}

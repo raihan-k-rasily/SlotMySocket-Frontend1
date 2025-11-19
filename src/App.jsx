@@ -1,14 +1,32 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { Route, Routes } from 'react-router-dom'
+
+import Home from './users/pages/Home'
+import Auth from './pages/Auth'
+import PNF from './pages/PNF'
+import Preloader from './components/Preloader'
+
+import Profile from './users/pages/Profile'
+import Stations from './users/pages/Stations'
+import Contact from './users/pages/Contact'
+
+
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <h1 className='p-10'>hello world</h1>
+      <Routes>
+          <Route path='' element={<Home/>}/>
+          <Route path='login' element={<Auth/>}/>
+          <Route path='register' element={<Auth register/>}/>
+          <Route path='profile' element={<Profile/>}/>
+          <Route path='stations' element={<Stations/>}/>
+          <Route path='contact' element={<Contact/>}/>
+
+      </Routes>
     </>
   )
 }
